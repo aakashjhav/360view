@@ -1,0 +1,123 @@
+html{
+    
+  --headingfont: red;
+  --fontsize:5px;
+--rotateSpeed:50s
+}
+
+body{
+    
+    
+    background-color: #000;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    perspective:15em;
+/*   perspective-origin: 055% calc(50% - 2em);*/
+   perspective-origin: 055% calc(50% - 2em);
+/* animation:  backgroundc 10s infinite ease-in;*/
+    animation-name: backgroundc;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    transition-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+
+    
+
+}
+
+@keyframes backgroundc {
+    
+    from{
+        background-color: blue;
+    }
+ 
+    
+    100%{
+        background-color: burlywood;
+    }
+}
+
+
+
+.scene{
+    
+    position: relative;
+    transform-style: preserve-3d;
+    animation: sceneRotate var(--rotateSpeed) infinite linear;  
+
+}
+
+@keyframes sceneRotate {
+    
+    to { transform:  rotateY(0360deg);
+}
+
+}
+.cube{
+    
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    top: -1em;
+    left: -1em;
+
+}
+
+.floor{
+    
+    height: 15em;
+    width: 15em;
+    background-image:linear-gradient( #5f5806  , #403006 40%, #6c470b);
+    position: absolute;
+    top: 1em;
+    transform: translate(-50% , -50%) rotateX(90deg);
+/*    background-image: radial-gradient(#000,#009 75%);*/
+    background-size: 100% ;
+}
+
+.incube{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 0.5em #000a inset;
+    
+}
+
+
+.front{
+    background-color: rgba(138, 43, 226, 0.41);
+    transform: translateZ(1em);
+}
+
+.back{
+    background-color:rgba(173, 255, 47, 0.53);
+    transform: rotateY(180deg) translateZ(1em);
+}
+
+.right{
+    background-color:rgba(226, 43, 43, 0.36);
+    transform: rotateY(90deg) translateZ(1em);    
+}
+
+
+.left{
+    background-color: rgba(199, 98, 145, 0.33);
+    transform: rotateY(270deg) translateZ(1em);
+}
+.top{
+    background-color: rgba(43, 226, 212, 0.42);
+    transform: translateY(-50%) rotateX(90deg);
+}
+
+.bottom{
+    background-color: rgba(255, 255, 0, 0.49);
+    bottom: 0;
+    transform: translateY(50%) rotateX(90deg);
+     box-shadow: 0 0 0.5em #000;
+}
+
+
+
